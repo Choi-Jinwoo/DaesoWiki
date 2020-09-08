@@ -1,13 +1,72 @@
 const models = require('../../models');
+const sequelize = require("sequelize");
+const Op = sequelize.Op;
 
 exports.getPost = async (req, res) => {
     try {
-        const posts = await models.Post.findAll({
-            order: [
-                ['createdAt', 'DESC'],
-            ],
+        const post = await models.Post.findOne({
+            where: {
+                idx: req.params.idx,
+            },
             raw: true,
         });
+
+        const postLike = await models.PostLike.findAll({
+            where: {
+                postIdx: post.idx
+            },
+            raw: true,
+        });
+
+        post.liked = false;
+        if (req.user) {
+            for (const pl of postLike) {
+                console.log(pl.userId);
+                pl.userId == req.user.id;
+                post.liked = true;
+                break;
+            }
+        }
+
+        post.likeCount = postLike.length;
+
+        res.status(200).json({
+            data: {
+                post,
+            },
+        });
+
+    } catch (err) {
+        console.log(err);
+        return res.status(500).json({
+            message: "서버 오류",
+        });
+    }
+}
+
+exports.getPosts = async (req, res) => {
+    try {
+        let posts = []
+        if (req.query.keyword) {
+            posts = await models.Post.findAll({
+                where: {
+                    title: {
+                        [Op.like]: "%" + req.query.keyword + "%"
+                    }
+                },
+                order: [
+                    ['createdAt', 'DESC'],
+                ],
+                raw: true,
+            });
+        } else {
+            posts = await models.Post.findAll({
+                order: [
+                    ['createdAt', 'DESC'],
+                ],
+                raw: true,
+            });
+        }
 
         for (const post of posts) {
             const postLike = await models.PostLike.findAll({
