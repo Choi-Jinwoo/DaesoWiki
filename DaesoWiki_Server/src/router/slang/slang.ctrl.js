@@ -2,7 +2,7 @@ const models = require('../../models');
 
 exports.getSlang = async (req, res) => {
     try {
-        const posts = await models.Slang.findAll({
+        const slang = await models.Slang.findAll({
             order: [
                 ['createdAt', 'DESC'],
             ],
@@ -12,7 +12,7 @@ exports.getSlang = async (req, res) => {
         return res.status(200).json({
             message: '조회 성공',
             data: {
-                posts,
+                slang,
             }
         });
 
