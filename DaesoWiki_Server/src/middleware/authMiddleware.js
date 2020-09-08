@@ -2,6 +2,7 @@ const models = require('../models');
 
 module.exports = async (req, res, next) => {
     const reqUser = req.headers.user;
+
     if (!reqUser) {
         next();
     } else {
@@ -11,6 +12,7 @@ module.exports = async (req, res, next) => {
             },
             raw: true
         });
+
         req.user = user;
         next();
     }
