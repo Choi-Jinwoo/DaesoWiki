@@ -7,10 +7,11 @@ import PostView from '../../components/PostView/PostView';
 import './MainPage.scss'
 import { useState } from 'react';
 import AddPostModal from '../../components/AddPost/AddPostModal';
+import LoginReqBox from '../../components/LoginReqBox/LoginReqBox';
 
 const MainPage = () => {
   const [postIdx, setPostIdx] = useState(null);
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
 
 
   return (
@@ -21,6 +22,7 @@ const MainPage = () => {
           <PostList setPostIdx={setPostIdx} /> : <PostView postIdx={postIdx} />
       }
       <FloatingAddBtn setIsOpen={setIsOpen} />
+      <LoginReqBox />
 
       <AddPostModal isOpen={isOpen} close={() => { setIsOpen(false) }} />
     </div >

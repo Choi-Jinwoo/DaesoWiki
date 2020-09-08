@@ -11,6 +11,7 @@ app.use(cors());
 
 const router = require('./router');
 
+app.use('/static', express.static('public'));
 app.use(authMiddleware);
 app.use('/api', router);
 
