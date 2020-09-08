@@ -1,5 +1,5 @@
-DaesogoWiki_Server/node_modules
-DaesogoWiki_Web/node_modules
+DaesoWiki_Server/node_modules
+DaesoWiki_Web/node_modules
 
 *.iml
 DaesoWiki_Android/.gradle
