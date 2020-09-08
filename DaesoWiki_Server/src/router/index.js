@@ -5,6 +5,6 @@ const slang = require('./slang');
 
 router.use('/auth', auth);
 router.use('/post', post);
-router.slang('/slang', slang);
+router.use('/slang', slang);
 
 module.exports = router;

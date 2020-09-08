@@ -4,7 +4,7 @@ const slangCtrl = require('./slang.ctrl');
 router.post('/', slangCtrl.createSlang);
 router.get('/', slangCtrl.getSlang);
 
-router.get('/history', postCtrl.getHistory);
+router.get('/history', slangCtrl.getHistory);
 
 
-module.exports = router;s
+module.exports = router;
