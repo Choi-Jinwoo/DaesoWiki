@@ -6,13 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".model.frame.Fragment4">
 
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="146dp"
-        android:layout_height="67dp"
-        android:layout_marginTop="292dp"
-        android:layout_marginEnd="132dp"
-        android:text="fragment4"
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="409dp"
+        android:layout_height="729dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
