@@ -20,15 +20,15 @@ class HomeActivity : AppCompatActivity() {
         main_Btn.setOnClickListener{
             setFrag(0)
         }
-        first_Btn.setOnClickListener {
-            setFrag(1)
-        }
-        second_Btn.setOnClickListener {
-            setFrag(2)
-        }
-        third_Btn.setOnClickListener {
-            setFrag(3)
-        }
+//        first_Btn.setOnClickListener {
+//            setFrag(1)
+//        }
+//        second_Btn.setOnClickListener {
+//            setFrag(2)
+//        }
+//        third_Btn.setOnClickListener {
+//            setFrag(3)
+//        }
     }
     private fun setFrag(fragNum : Int) {
         val ft = supportFragmentManager.beginTransaction() //화면 교체를 위한 트랜잭션
@@ -36,15 +36,15 @@ class HomeActivity : AppCompatActivity() {
             0 -> {
                 ft.replace(R.id.main_frame, Fragment1()).commit()
             }
-            1 ->{
-                ft.replace(R.id.main_frame, Fragment2()).commit()
-            }
-            2->{
-                ft.replace(R.id.main_frame, Fragment3()).commit()
-            }
-            3->{
-                ft.replace(R.id.main_frame, Fragment4()).commit()
-            }
+//            1 ->{
+//                ft.replace(R.id.main_frame, Fragment2()).commit()
+//            }
+//            2->{
+//                ft.replace(R.id.main_frame, Fragment3()).commit()
+//            }
+//            3->{
+//                ft.replace(R.id.main_frame, Fragment4()).commit()
+//            }
         }
     }
 
