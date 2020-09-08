@@ -1,0 +1,74 @@
+@import '../../styles/palette.scss';
+
+.addPostodal-overlay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0,0,0,0.16);
+}
+
+.authModal{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 480px;
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      padding: 60px 0px;
+
+      h3 {
+        margin: 0;
+        padding: 0;
+        color: $main-color;
+      }
+
+      .loginForm {
+        margin: 20px 0;
+
+        .inputForm {
+          margin: 30px 0;
+
+          p {
+            margin: 0;
+            padding: 0;
+            color: $gray6;
+            font-weight: bolder;
+            font-size: 0.8rem;
+          }
+
+          input {
+            width: 250px;
+            margin-top: 5px;
+            padding: 5px 8px;
+            outline: none;
+            color: $gray8;
+            border: none;
+            border-bottom: 1px solid $gray6;
+            font-size: 1rem;
+          }
+        }
+      }
+
+      button {
+        border: none;
+        background-color: $main-color;
+        color: #ffffff;
+        font-size: 1rem;
+        padding: 8px 0;
+        cursor: pointer;
+
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+}
