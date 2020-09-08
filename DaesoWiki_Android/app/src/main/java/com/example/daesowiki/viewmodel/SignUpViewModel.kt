@@ -5,8 +5,8 @@ import androidx.lifecycle.MutableLiveData
 import com.example.daesowiki.base.BaseViewModel
 import com.example.daesowiki.Myapplication
 import com.example.daesowiki.SingleLiveEvent
-import com.example.daesowiki.model.SignUpBody
-import com.example.daesowiki.model.SignUpData
+import com.example.daesowiki.model.request.SignUpBody
+import com.example.daesowiki.model.response.SignUpData
 import com.example.daesowiki.network.Dao
 import retrofit2.Call
 import retrofit2.Callback
@@ -44,7 +44,8 @@ class SignUpViewModel : BaseViewModel() {
             SignUpBody(
                 id = Myapplication.prefs.getId("signUpId", "없음"),
                 pw = Myapplication.prefs.getPw("signUpPw", "없음"),
-                grade = Myapplication.prefs.getGrade("signUpGrade", "없음"))
+                grade = Myapplication.prefs.getGrade("signUpGrade", "없음")
+            )
         ).enqueue(
             object : Callback<SignUpData> {
                 override fun onFailure(call: Call<SignUpData>, t: Throwable) {

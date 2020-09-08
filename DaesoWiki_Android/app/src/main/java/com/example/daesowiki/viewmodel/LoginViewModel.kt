@@ -3,8 +3,8 @@ package com.example.daesowiki.viewmodel
 import androidx.lifecycle.MutableLiveData
 import com.example.daesowiki.base.BaseViewModel
 import com.example.daesowiki.SingleLiveEvent
-import com.example.daesowiki.model.LoginBody
-import com.example.daesowiki.model.LoginData
+import com.example.daesowiki.model.request.LoginBody
+import com.example.daesowiki.model.response.LoginData
 import com.example.daesowiki.network.Dao
 import retrofit2.Call
 import retrofit2.Callback

@@ -1,4 +1,4 @@
-package com.example.daesowiki.model
+package com.example.daesowiki.model.request
 
 data class SignUpBody (
 val id : String,

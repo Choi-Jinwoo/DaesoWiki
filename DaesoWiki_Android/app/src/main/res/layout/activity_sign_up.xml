@@ -5,7 +5,6 @@
     tools:context=".view.SignUpActivity">
 
     <data>
-
         <variable
             name="viewModel"
             type="com.example.daesowiki.viewmodel.SignUpViewModel" />
@@ -13,57 +12,84 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@drawable/backgroung2"
+        >
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="16dp"
-        android:text="Hello!"
-        android:textStyle="bold"
-        android:textColor="#2026a2"
-        android:textSize="36sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="16dp"
+            android:text="Hello!"
+            android:textColor="#2026a2"
+            android:textSize="36sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/Sign_id_Et"
-        android:layout_width="331dp"
-        android:layout_height="79dp"
-        android:layout_marginTop="100dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.621"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="아이디"
+            android:textColor="#2026a2"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/Sign_id_Et"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.131"
+            app:layout_constraintStart_toStartOf="parent" />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:hint="아이디를 입력하세요"
+        <EditText
+            android:id="@+id/Sign_id_Et"
+            android:layout_width="331dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="100dp"
+            android:background="@drawable/edit_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.621"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             android:text="@={viewModel.id}"
-            android:inputType="text" />
-    </com.google.android.material.textfield.TextInputLayout>
+            />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/sign_pw_Et"
-        android:layout_width="331dp"
-        android:layout_height="79dp"
-        android:layout_marginTop="250dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.621"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="비밀번호"
+            android:textColor="#2026a2"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/sign_pw_Et"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.131"
+            app:layout_constraintStart_toStartOf="parent" />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:hint="비밀번호를 입력하세요"
+        <EditText
+            android:id="@+id/sign_pw_Et"
+            android:layout_width="331dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="250dp"
+            android:background="@drawable/edit_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.621"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             android:text="@={viewModel.pw}"
             android:inputType="textPassword"
-            android:textColorHint="#000000" />
+            />
 
-    </com.google.android.material.textfield.TextInputLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="비밀번호 확인"
+            android:textColor="#2026a2"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/sign_repw_Et"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.131"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:id="@+id/sign_ckpw_Tv"
@@ -71,66 +97,67 @@
             android:layout_height="wrap_content"
             android:text=""
             android:textColor="#2026a2"
-            android:textSize="26sp"
+            android:textSize="16sp"
             app:layout_constraintBottom_toTopOf="@+id/sign_repw_Et"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.853"
             app:layout_constraintStart_toStartOf="parent" />
 
-        <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/sign_repw_Et"
-        android:layout_width="331dp"
-        android:layout_height="79dp"
-        android:layout_marginTop="400dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.621"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="학년"
+            android:textColor="#2026a2"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/Sign_student_Et"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.131"
+            app:layout_constraintStart_toStartOf="parent" />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:hint="비밀번호를 다시 입력하세요"
+        <EditText
+            android:id="@+id/sign_repw_Et"
+            android:layout_width="331dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="400dp"
+            android:background="@drawable/edit_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.621"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             android:text="@={viewModel.repw}"
             android:inputType="textPassword"
-            android:textColorHint="#000000" />
-    </com.google.android.material.textfield.TextInputLayout>
+            />
 
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/Sign_student_Et"
-        android:layout_width="331dp"
-        android:layout_height="79dp"
-        android:layout_marginTop="550dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.621"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:hint="학년을 입력하세요"
+        <EditText
+            android:id="@+id/Sign_student_Et"
+            android:layout_width="331dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="550dp"
+            android:background="@drawable/edit_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.621"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             android:text="@={viewModel.grade}"
             android:inputType="number"
-            android:textColorHint="#000000" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <Button
-        android:id="@+id/sign_next_Btn"
-        android:layout_width="331dp"
-        android:layout_height="55dp"
-        android:background="@drawable/main__btn"
-        android:text="완료"
-        android:textColor="#FFFFFF"
-        android:textSize="24dp"
-        android:onClick="@{()->viewModel.nextBtnClick()}"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Sign_student_Et"
-        app:layout_constraintVertical_bias="0.67" />
+            />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <Button
+            android:id="@+id/sign_next_Btn"
+            android:layout_width="331dp"
+            android:layout_height="55dp"
+            android:background="@drawable/main__btn"
+            android:text="완료"
+            android:textColor="#FFFFFF"
+            android:textSize="24dp"
+            android:onClick="@{()->viewModel.nextBtnClick()}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Sign_student_Et"
+            app:layout_constraintVertical_bias="0.67" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
