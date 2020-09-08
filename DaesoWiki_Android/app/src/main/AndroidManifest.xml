@@ -10,10 +10,14 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
-        android:usesCleartextTraffic="true"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".view.SignUpActivity"></activity>
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".model.frame.Fragment4"></activity>
+        <activity android:name=".model.frame.Fragment3" />
+        <activity android:name=".model.frame.Fragment2" />
+        <activity android:name=".model.frame.Fragment1" />
+        <activity android:name=".view.SignUpActivity" />
         <activity android:name=".view.HomeActivity" />
         <activity android:name=".view.LoginActivity">
             <intent-filter>

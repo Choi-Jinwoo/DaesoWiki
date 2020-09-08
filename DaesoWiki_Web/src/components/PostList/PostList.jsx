@@ -5,7 +5,7 @@ import PostItem from './PostItem/PostItem';
 import PostStore from '../../stores/PostStore';
 import { observer } from 'mobx-react';
 
-const PostList = observer(() => {
+const PostList = observer(({ setPostIdx }) => {
   const { filterList, getPostList } = PostStore;
 
   const handlePostList = useCallback(async () => {
@@ -13,7 +13,7 @@ const PostList = observer(() => {
   }, [getPostList]);
 
   const postList = filterList.map(item => {
-    return <PostItem post={item}></PostItem>;
+    return <PostItem post={item} setPostIdx={setPostIdx}></ PostItem>;
   });
 
   useEffect(() => {

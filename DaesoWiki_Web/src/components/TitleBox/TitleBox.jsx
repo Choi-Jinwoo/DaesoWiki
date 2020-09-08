@@ -6,9 +6,9 @@ import { BsList } from 'react-icons/bs';
 import { FiSearch } from 'react-icons/fi';
 import PageStroe from '../../stores/PostStore';
 
-const TitleBox = () => {
+const TitleBox = ({ setPostIdx }) => {
   const [selected, setSelected] = useState(0);
-  const { list, getPostList } = PageStroe;
+  const { list, getPostList, getPostListByKeyword } = PageStroe;
 
   return (
     <div className='titleBox'>
@@ -16,13 +16,21 @@ const TitleBox = () => {
         <img src={logo} alt="" />
         <div className='searchBox'>
           <FiSearch className='searchIcon' size='20px' color='#2026A2' />
-          <input type="text" />
+          <input type="text" onKeyPress={
+            (e) => {
+              setPostIdx(null);
+              if (e.key === 'Enter') {
+                getPostListByKeyword(e.target.value);
+              }
+            }
+          } />
         </div>
       </div>
 
       <div className='listBox'>
         <BsList size='24px' />
         <span onClick={() => {
+          setPostIdx(null);
           getPostList()
         }}>메인</span>
         <span onClick={
