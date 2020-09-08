@@ -5,16 +5,40 @@ exports.slangpost = async (req, res) => {
 
     try {
         await models.post.create({
-            title: body.title,
+            grade: body.grade,
             content: body.content,
-            category: body.category,
+            title: body.title,
         })
 
         return res.status(200).json({
-            message: "게시글 게시 성공",
+            message: "속어 게시 성공",
         });
 
     } catch (err) {
+        return res.status(500).json({
+            message: "서버 오류",
+        });
+    }
+}
+
+exports.getHistory = async (req, res, next) => {
+    const { slangIdx } = req.query;
+
+    try {
+        const history = await models.SlangHistory.findAll({
+            where: {
+                slangIdx,
+            },
+        });
+
+        return res.status(200).json({
+            message: '성공',
+            data: {
+                history,
+            },
+        });
+    } catch (err) {
+        console.log(err);
         return res.status(500).json({
             message: "서버 오류",
         });
