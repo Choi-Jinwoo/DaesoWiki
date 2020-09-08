@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize');
 
-const sequelize = new Sequelize('wiki', 'root', '1234', {
+const sequelize = new Sequelize('wiki', 'root', 'chlwlsdn', {
   host: 'localhost',
   dialect: 'mysql',
   logging: false,

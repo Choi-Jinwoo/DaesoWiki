@@ -35,7 +35,7 @@ exports.register = async (req, res) => {
     const { body } = req;
 
     try {
-        const data = await models.user.findOne({
+        const data = await models.User.findOne({
             where: {
                 id: body.id,
             },
@@ -47,7 +47,7 @@ exports.register = async (req, res) => {
             });
         }
 
-        await models.user.create({
+        await models.User.create({
             id: body.id,
             pw: body.pw,
             grade: body.grade,
@@ -58,6 +58,7 @@ exports.register = async (req, res) => {
         });
 
     } catch (err) {
+        console.log(err);
         return res.status(500).json({
             message: "서버 오류",
         });
