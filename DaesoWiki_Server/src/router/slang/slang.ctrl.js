@@ -1,6 +1,30 @@
 const models = require('../../models');
 
-exports.slangpost = async (req, res) => {
+exports.getSlang = async (req, res) => {
+    try {
+        const posts = await models.Slang.findAll({
+            order: [
+                ['createdAt', 'DESC'],
+            ],
+            raw: true,
+        });
+
+        return res.status(200).json({
+            message: '조회 성공',
+            data: {
+                posts,
+            }
+        });
+
+    } catch (err) {
+        console.log(err);
+        return res.status(500).json({
+            message: "서버 오류",
+        });
+    }
+}
+
+exports.createSlang = async (req, res) => {
     const { body } = req;
 
     try {
