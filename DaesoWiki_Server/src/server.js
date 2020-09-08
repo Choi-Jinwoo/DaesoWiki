@@ -15,6 +15,6 @@ app.use('/static', express.static('public'));
 app.use(authMiddleware);
 app.use('/api', router);
 
-app.listen(8080, () => {
+app.listen(8000, () => {
   console.log("start");
 });
