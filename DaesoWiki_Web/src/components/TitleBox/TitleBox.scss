@@ -5,6 +5,7 @@
   background-color: #ffffff;
   top: 0;
   border-bottom: 1px solid #dbdbdb;
+
   .topBar {
     padding: 20px;
     margin: 0 auto;
@@ -52,6 +53,7 @@
     width: 70%;
 
     span {
+      cursor: pointer;
       margin-left: 50px;
       padding: 20px 0;
     }
