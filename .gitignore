@@ -1,2 +1,17 @@
 DaesogoWiki_Server/node_modules
 DaesogoWiki_Web/node_modules
+
+*.iml
+DaesoWiki_Android/.gradle
+DaesoWiki_Android/local.properties
+DaesoWiki_Android/.idea/caches
+DaesoWiki_Android/.idea/libraries
+DaesoWiki_Android/.idea/modules.xml
+DaesoWiki_Android/.idea/workspace.xml
+DaesoWiki_Android/.idea/navEditor.xml
+DaesoWiki_Android/.idea/assetWizardSettings.xml
+DaesoWiki_Android.DS_Store
+DaesoWiki_Android/build
+DaesoWiki_Android/captures
+DaesoWiki_Android.externalNativeBuild
+DaesoWiki_Android/.cxx
