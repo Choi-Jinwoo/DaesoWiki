@@ -6,14 +6,17 @@ import './PostItem.scss'
 
 /**
  * props
+ * - idx
  * - title
  * - createdAt
  * - category
  * - likeCount
  */
-const PostItem = ({ post }) => {
+const PostItem = ({ post, setPostIdx }) => {
   return (
-    <div className='postItem'>
+    <div className='postItem' onClick={(e) => {
+      setPostIdx(post.idx);
+    }}>
       <div className='heart'>
         <FaHeart size='12px' color='#2026A2' />
         {post.likeCount}

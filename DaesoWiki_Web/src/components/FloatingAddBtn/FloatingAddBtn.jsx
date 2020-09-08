@@ -3,9 +3,13 @@ import { FiPlus } from 'react-icons/fi';
 
 import './FloatingAddBtn.scss';
 
-const FloatingAddBtn = () => {
+const FloatingAddBtn = ({ setIsOpen }) => {
   return (
-    <div className='floatingAddBtn'>
+    <div className='floatingAddBtn' onClick={
+      (e) => {
+        setIsOpen(true);
+      }
+    }>
       <FiPlus size='36px' color='#ffffff' />
     </div>
   )
