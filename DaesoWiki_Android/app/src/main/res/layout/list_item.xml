@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root_view"
     android:layout_width="match_parent"
     android:layout_height="80dp">
 
@@ -22,7 +22,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
+        android:fontFamily="@font/spoqahansansregular"
         android:text="안녕"
+        android:textSize="14sp"
+        android:textColor="@color/colorBlack"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/heart"
         app:layout_constraintStart_toStartOf="parent"
@@ -34,28 +37,45 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
+        android:fontFamily="@font/spoqahansansregular"
         android:text="안녕1"
+        android:textSize="16sp"
+        android:textColor="@color/colorBlack"
         app:layout_constraintBottom_toBottomOf="@+id/heart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.061"
         app:layout_constraintStart_toEndOf="@+id/heart"
-        app:layout_constraintTop_toTopOf="@id/heart" />
+        app:layout_constraintTop_toTopOf="@id/heart"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/grade_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/spoqahansansregular"
         android:text="안녕2"
-        app:layout_constraintStart_toStartOf="@id/title_tv"
+        android:textSize="14sp"
+        android:textColor="@color/colorBlack"
         app:layout_constraintBottom_toBottomOf="@+id/heart_num_tv"
-        tools:layout_editor_absoluteX="53dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@id/title_tv"
+        app:layout_constraintTop_toBottomOf="@+id/title_tv"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/date_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="35dp"
+        android:fontFamily="@font/spoqahansansregular"
         android:text="안녕3"
+        android:textSize="14sp"
+        android:textColor="@color/colorBlack"
         app:layout_constraintBottom_toBottomOf="@+id/grade_tv"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/grade_tv"
-        app:layout_constraintTop_toTopOf="@id/grade_tv" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.781" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
