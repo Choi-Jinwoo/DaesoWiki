@@ -13,7 +13,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".model.frame.Fragment4"></activity>
+        <activity android:name=".view.ProfileActivity"></activity>
+        <activity android:name=".model.frame.Fragment4" />
         <activity android:name=".model.frame.Fragment3" />
         <activity android:name=".model.frame.Fragment2" />
         <activity android:name=".model.frame.Fragment1" />

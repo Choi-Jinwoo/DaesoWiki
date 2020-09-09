@@ -1,7 +1,10 @@
 package com.example.daesowiki.view
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.daesowiki.R
 import com.example.daesowiki.SingleLiveEvent
@@ -10,6 +13,7 @@ import com.example.daesowiki.model.frame.Fragment2
 import com.example.daesowiki.model.frame.Fragment3
 import com.example.daesowiki.model.frame.Fragment4
 import kotlinx.android.synthetic.main.activity_home.*
+import kotlinx.android.synthetic.main.activity_profile.*
 
 class HomeActivity : AppCompatActivity() {
 
@@ -18,6 +22,20 @@ class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
+
+        Log.d("User", intent.getStringExtra("Profile") + " this is id")
+
+        val userId = intent.getStringExtra("Profile")
+
+
+
+        name.setOnClickListener {
+
+        var intent = Intent(this@HomeActivity, ProfileActivity::class.java)
+        intent.putExtra("Profile2", userId)
+        startActivity(intent)
+
+    }
 
         setFrag(0)
 

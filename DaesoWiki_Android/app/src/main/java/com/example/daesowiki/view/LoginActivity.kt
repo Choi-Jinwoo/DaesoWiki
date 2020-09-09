@@ -36,7 +36,8 @@ class LoginActivity : BaseActivity<ActivityLoginBinding, LoginViewModel>() {
             loginStatus.observe(this@LoginActivity, Observer {
                 if (loginStatus.value == "200") {
                     Toast.makeText(this@LoginActivity, "로그인 성공",Toast.LENGTH_SHORT).show()
-                    var intent = Intent(this@LoginActivity, HomeActivity::class.java )
+                    var intent = Intent(this@LoginActivity, HomeActivity::class.java)
+                    intent.putExtra("Profile", id.value)
                     startActivity(intent)
                     finish()
                 } else if (loginStatus.value == "400") {
