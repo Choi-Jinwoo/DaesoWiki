@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.daesowiki.R
 import com.example.daesowiki.model.response.ListData
 
-class SearchAdapter(val context: Context, var list: List<ListData>): RecyclerView.Adapter<SearchAdapter.MyViewHolder>(){
+class SearchAdapter(val context: Context, var list: List<ListData.Post>): RecyclerView.Adapter<SearchAdapter.MyViewHolder>(){
 
     class MyViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView) {
         val heartNum = itemView?.findViewById<TextView>(R.id.heart_num_tv)
@@ -17,16 +17,12 @@ class SearchAdapter(val context: Context, var list: List<ListData>): RecyclerVie
         val grade = itemView?.findViewById<TextView>(R.id.grade_tv)
         val date = itemView?.findViewById<TextView>(R.id.date_tv)
 
-        fun bind(listData: ListData, context: Context){
-            heartNum?.text = listData.heartNum.toString()
+        fun bind(listData: ListData.Post, context: Context){
+            heartNum?.text = listData.idx.toString()
             title?.text = listData.title
-            grade?.text = listData.grade.toString()
-            date?.text = listData.date.toString()
+            grade?.text = listData.category.toString()
+            date?.text = listData.createdAt.toString()
         }
-    }
-
-    fun setData(list: List<ListData>){
-        this.list = list;
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {

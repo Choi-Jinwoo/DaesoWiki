@@ -14,7 +14,9 @@ import com.example.daesowiki.R
 import com.example.daesowiki.model.SearchAdapter
 import com.example.daesowiki.model.response.ListData
 import com.example.daesowiki.network.Dao
+import com.example.daesowiki.network.RetrofitClient
 import com.example.daesowiki.view.HomeActivity
+import kotlinx.android.synthetic.main.activity_fragment1.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -22,8 +24,7 @@ import retrofit2.Retrofit
 
 class Fragment1 : Fragment() {
 
-    lateinit var list:List<ListData>
-    lateinit var recyclerView:RecyclerView
+    val list = ArrayList<ListData.Post>()
     lateinit var myAPI: Dao
     lateinit var retrofit: Retrofit
 
@@ -36,25 +37,28 @@ class Fragment1 : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val searchAdapter = SearchAdapter(activity!!.applicationContext, list)
-        recyclerView.adapter = searchAdapter
-
         val lm = LinearLayoutManager(activity!!.applicationContext)
-        recyclerView.layoutManager = lm
-        recyclerView.setHasFixedSize(true)
+        recycler_view.layoutManager = lm
+        recycler_view.setHasFixedSize(true)
 
+        retrofit = RetrofitClient.getInstance()
         myAPI = retrofit.create(Dao::class.java)
-        myAPI.list_get().enqueue(object : Callback<List<ListData>>{
-            override fun onFailure(call: Call<List<ListData>>, t: Throwable) {
-
+        myAPI.list_get().enqueue(object : Callback<ListData>{
+            override fun onFailure(call: Call<ListData>, t: Throwable) {
+                Log.e("e", t.message!!)
             }
 
             override fun onResponse(
-                call: Call<List<ListData>>,
-                response: Response<List<ListData>>
+                call: Call<ListData>,
+                response: Response<ListData>
             ) {
+                Log.e("i", "i")
+
                 if(response.code() == 200){
-                    searchAdapter.setData(response.body()!!)
+                    val searchAdapter = SearchAdapter(activity!!.applicationContext, list)
+                    recycler_view.adapter = searchAdapter
+                    list.clear()
+                    list.addAll(response.body()!!.data.posts)
                     searchAdapter.notifyDataSetChanged()
                 }
             }

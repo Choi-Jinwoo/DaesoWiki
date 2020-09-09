@@ -27,10 +27,10 @@ interface Dao {
     @GET("/api/post")
     fun search(
         @Query("keyword") keyword : String
-    ) : Call<List<ListData>>
+    ) : Call<ListData>
 
     @GET("/api/post")
-    fun list_get():Call<List<ListData>>
+    fun list_get():Call<ListData>
 
 //    @GET("/static/")
 }
