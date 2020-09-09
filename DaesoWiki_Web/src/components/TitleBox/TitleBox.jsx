@@ -13,7 +13,12 @@ const TitleBox = ({ setPostIdx }) => {
   return (
     <div className='titleBox'>
       <div className='topBar'>
-        <img src={logo} alt="" />
+        <img src={logo} alt="" style={{
+          cursor: 'pointer',
+        }} onClick={() => {
+          window.location.reload(true)
+        }
+        } />
         <div className='searchBox'>
           <FiSearch className='searchIcon' size='20px' color='#2026A2' />
           <input type="text" onKeyPress={
@@ -29,26 +34,55 @@ const TitleBox = ({ setPostIdx }) => {
 
       <div className='listBox'>
         <BsList size='24px' />
-        <span onClick={() => {
-          setPostIdx(null);
-          getPostList()
-        }}>메인</span>
-        <span onClick={
-          () => {
-            PageStroe.listFilterWithCategory(1);
-          }
-        }>1학년</span>
-        <span onClick={
-          () => {
-            PageStroe.listFilterWithCategory(2);
-          }
-        }>2학년</span>
-        <span onClick={
-          () => {
-            PageStroe.listFilterWithCategory(3);
-          }
-        }>3학년</span>
-        <span>개발자소개</span>
+        <span
+          style={{
+            borderBottom: selected == 0 ? '2px solid #2026A2' : null,
+          }}
+          onClick={() => {
+            setSelected(0);
+            setPostIdx(null);
+            getPostList()
+          }}>메인</span>
+        <span
+          style={{
+            borderBottom: selected == 1 ? '2px solid #2026A2' : null,
+          }}
+          onClick={
+            () => {
+              setSelected(1);
+              PageStroe.listFilterWithCategory(1);
+            }
+          }>1학년</span>
+        <span
+          style={{
+            borderBottom: selected == 2 ? '2px solid #2026A2' : null,
+          }}
+          onClick={
+            () => {
+              setSelected(2);
+              PageStroe.listFilterWithCategory(2);
+            }
+          }>2학년</span>
+        <span
+          style={{
+            borderBottom: selected == 3 ? '2px solid #2026A2' : null,
+          }}
+          onClick={
+            () => {
+              PageStroe.listFilterWithCategory(3);
+              setSelected(3);
+            }
+          }>3학년</span>
+        <span
+          style={{
+            borderBottom: selected == 4 ? '2px solid #2026A2' : null,
+          }}
+          onClick={
+            async () => {
+              setSelected(4);
+              await PageStroe.getSlang();
+            }
+          }>밈</span>
       </div>
     </div>
   )

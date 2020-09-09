@@ -8,18 +8,22 @@ import { getToken } from '../lib/token';
 class PostStore {
   @observable list = [];
   @observable filterList = [];
-  @observable post = [];
+  @observable post = {};
 
   getPost = async (idx) => {
+    const token = getToken();
     try {
       const resp = await axios.get(`${SERVER.default}/api/post/${idx}`, {
         headers: {
-          'user': getToken(),
+          user: token,
         }
       });
       const { data } = resp.data;
       this.post = data.post;
-    } catch (err) { }
+    } catch (err) {
+      console.log(err);
+
+    }
   }
 
   getPostList = async (keyword) => {
@@ -34,6 +38,15 @@ class PostStore {
       this.list = data.posts;
       this.filterList = this.list;
     } catch (err) { }
+  }
+
+  getSlang = async () => {
+    try {
+      const resp = await axios.get(`${SERVER.default}/api/slang`);
+      this.filterList = resp.data.data.slang;
+    } catch (err) {
+      console.log(err);
+    }
   }
 
   listFilterWithCategory = (category) => {

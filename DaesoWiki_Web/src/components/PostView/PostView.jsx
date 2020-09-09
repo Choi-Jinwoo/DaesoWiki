@@ -9,13 +9,19 @@ import { FaHeart } from 'react-icons/fa';
 import axios from 'axios';
 import SERVER from '../../stores/config';
 import { getToken } from '../../lib/token';
+import { useState } from 'react';
+import ModifyPostModal from '../ModifyPost/ModifyPostModal';
+import { BiEdit } from 'react-icons/bi';
+import HistoryModal from '../HistoryModal/HistoryModal';
 
 const PostView = observer(({ postIdx }) => {
 
   const { post, getPost } = PostStore;
+  const [modifyIsOpen, setModifyIsOpen] = useState(false);
 
   const handlePost = useCallback(async () => {
     await getPost(postIdx);
+    console.log(('pass'));
   }, [getPost]);
 
   useEffect(() => {
@@ -24,9 +30,25 @@ const PostView = observer(({ postIdx }) => {
 
   return (
     <div className='postView'>
-      <div className='title'>
-        <h1>{post.title}</h1>
-        <span>{post.category}학년</span>
+      <ModifyPostModal isOpen={modifyIsOpen} close={() => {
+        setModifyIsOpen(false)
+      }} post={post} />
+
+
+      <div className='wrapper'>
+        <div className='title'>
+          <h1>{post.title}</h1>
+          <span>{post.category}학년</span>
+        </div>
+        <BiEdit className='icon' color='#707070' onClick={
+          async e => {
+            if (!getToken()) {
+              alert('로그인 후 이용해주세요');
+            } else {
+              setModifyIsOpen(true)
+            }
+          }
+        } />
       </div>
       <div className='content'>
         <img src={`${SERVER}/static/${post.thumbnail}`} alt="" />

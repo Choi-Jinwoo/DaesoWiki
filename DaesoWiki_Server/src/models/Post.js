@@ -31,7 +31,7 @@ module.exports = (sequelize, DataTypes) => {
       field: 'created_at',
       type: DataTypes.DATE,
       allowNull: false,
-      defaultValue: Date.now()
+      defaultValue: Date.now,
     }
   }, {
     tableName: 'post',

@@ -26,7 +26,7 @@ module.exports = (sequelize, DataTypes) => {
       field: 'created_at',
       type: DataTypes.DATE,
       allowNull: false,
-      defaultValue: new Date(),
+      defaultValue: Date.now,
     }
   }, {
     tableName: 'slang',

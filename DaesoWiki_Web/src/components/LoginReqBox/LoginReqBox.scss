@@ -4,17 +4,33 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  left: 160px;
+  left: 200px;
   top: 200px;
   background-color: #ffffff ;
   width: 300px;
   box-shadow: 0px 0px 4px 0px rgba($color: #000000, $alpha: 0.125);
 
+  .profileBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    img {
+      width: 50px;
+      border-radius: 50%;
+    }
+    p {
+      margin: 0;
+      padding: 0;
+      margin-top: 20px;
+      color: #56565A;
+    }
+  }
 
   button {
     margin-top: 30px;
     border-radius: 10px;
-    width: 180px;
+    width: 240px;
     background-color: #2026A2;
     color: #ffffff;
     border: none;

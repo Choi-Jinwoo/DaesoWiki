@@ -7,6 +7,7 @@
   box-sizing: border-box;
   border-radius: 5px;
   padding: 10px;
+  cursor: pointer;
 
   .heart {
     display: flex;
@@ -38,5 +39,34 @@
         margin-right: 10px;
       }
     }
+  }
+}
+
+.slangItem {
+  border: 1px solid #dbdbdb;
+  box-sizing: border-box;
+  min-height: 200px;
+  padding: 20px;
+  margin-bottom: 10px;
+  background-color: #ffffff;
+
+  span {
+    font-size: 12px;
+    color: #707070;
+  }
+
+  h3 {
+    padding: 0;
+    margin: 0;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px #dbdbdb solid;
+  }
+
+  p {
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+    color: #191847;
   }
 }

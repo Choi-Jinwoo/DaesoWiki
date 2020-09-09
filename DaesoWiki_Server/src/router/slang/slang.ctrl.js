@@ -28,7 +28,7 @@ exports.createSlang = async (req, res) => {
     const { body } = req;
 
     try {
-        await models.post.create({
+        await models.Slang.create({
             grade: body.grade,
             content: body.content,
             title: body.title,
