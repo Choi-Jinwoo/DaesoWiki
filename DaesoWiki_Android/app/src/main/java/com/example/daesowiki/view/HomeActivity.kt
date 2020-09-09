@@ -5,15 +5,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
-import androidx.fragment.app.Fragment
 import com.example.daesowiki.R
 import com.example.daesowiki.SingleLiveEvent
 import com.example.daesowiki.model.frame.Fragment1
-import com.example.daesowiki.model.frame.Fragment2
-import com.example.daesowiki.model.frame.Fragment3
-import com.example.daesowiki.model.frame.Fragment4
 import kotlinx.android.synthetic.main.activity_home.*
-import kotlinx.android.synthetic.main.activity_profile.*
 
 class HomeActivity : AppCompatActivity() {
 
