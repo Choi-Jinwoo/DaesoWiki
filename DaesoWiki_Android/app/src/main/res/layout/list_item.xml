@@ -36,6 +36,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
         android:text="안녕1"
+        android:textSize="16sp"
+        android:textColor="@color/colorBlack"
         app:layout_constraintBottom_toBottomOf="@+id/heart"
         app:layout_constraintStart_toEndOf="@+id/heart"
         app:layout_constraintTop_toTopOf="@id/heart" />
@@ -45,6 +47,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="안녕2"
+        android:textSize="14sp"
+        android:textColor="@color/colorBlack"
         app:layout_constraintStart_toStartOf="@id/title_tv"
         app:layout_constraintBottom_toBottomOf="@+id/heart_num_tv"
         tools:layout_editor_absoluteX="53dp" />
@@ -55,8 +59,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="35dp"
         android:text="안녕3"
-        app:layout_constraintBottom_toBottomOf="@+id/grade_tv"
+        android:textSize="14sp"
+        android:textColor="@color/colorBlack"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/grade_tv"
-        app:layout_constraintTop_toTopOf="@id/grade_tv" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
