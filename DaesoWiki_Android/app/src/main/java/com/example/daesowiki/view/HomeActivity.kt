@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.example.daesowiki.R
+import com.example.daesowiki.SingleLiveEvent
 import com.example.daesowiki.model.frame.Fragment1
 import com.example.daesowiki.model.frame.Fragment2
 import com.example.daesowiki.model.frame.Fragment3
@@ -11,6 +12,9 @@ import com.example.daesowiki.model.frame.Fragment4
 import kotlinx.android.synthetic.main.activity_home.*
 
 class HomeActivity : AppCompatActivity() {
+
+    val searchClickEvent = SingleLiveEvent<Unit>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
@@ -20,6 +24,11 @@ class HomeActivity : AppCompatActivity() {
         main_Btn.setOnClickListener{
             setFrag(0)
         }
+
+        search_Btn.setOnClickListener {
+            searchClickEvent.call()
+        }
+
 //        first_Btn.setOnClickListener {
 //            setFrag(1)
 //        }

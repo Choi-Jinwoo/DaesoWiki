@@ -4,14 +4,29 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.daesowiki.R
+import com.example.daesowiki.model.response.ListData
 
-class SearchAdapter(val context: Context): RecyclerView.Adapter<SearchAdapter.MyViewHolder>(){
-//    private List<>
+class SearchAdapter(val context: Context, var list: List<ListData>): RecyclerView.Adapter<SearchAdapter.MyViewHolder>(){
 
     class MyViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView) {
+        val heartNum = itemView?.findViewById<TextView>(R.id.heart_num_tv)
+        val title = itemView?.findViewById<TextView>(R.id.title_tv)
+        val grade = itemView?.findViewById<TextView>(R.id.grade_tv)
+        val date = itemView?.findViewById<TextView>(R.id.date_tv)
 
+        fun bind(listData: ListData, context: Context){
+            heartNum?.text = listData.heartNum.toString()
+            title?.text = listData.title
+            grade?.text = listData.grade.toString()
+            date?.text = listData.date.toString()
+        }
+    }
+
+    fun setData(list: List<ListData>){
+        this.list = list;
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
@@ -20,10 +35,12 @@ class SearchAdapter(val context: Context): RecyclerView.Adapter<SearchAdapter.My
     }
 
     override fun getItemCount(): Int {
-        TODO("Not yet implemented")
+        return if(list == null) 0 else {
+            list.size
+        }
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        TODO("Not yet implemented")
+        holder?.bind(list[position], context)
     }
 }

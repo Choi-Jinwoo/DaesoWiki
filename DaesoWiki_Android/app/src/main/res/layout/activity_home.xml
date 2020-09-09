@@ -39,6 +39,7 @@
         app:srcCompat="@drawable/whitelogo" />
 
     <ImageButton
+        android:id="@+id/search_Btn"
         android:layout_width="48dp"
         android:layout_height="43dp"
         android:layout_marginTop="4dp"
