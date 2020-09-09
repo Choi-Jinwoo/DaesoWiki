@@ -65,6 +65,8 @@ const AddPostModal = ({ isOpen, close }) => {
         setTitle('')
         setContent('')
         close();
+        window.locaiton.reload(true);
+
       } catch (err) {
         console.log((err));
       }

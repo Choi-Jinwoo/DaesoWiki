@@ -44,6 +44,9 @@ const LoginModal = ({ isOpen, close, setIsLogin }) => {
         setType(0);
       }
     }
+    setId('');
+    setPw('');
+    setGrade(1);
   }
 
   return (

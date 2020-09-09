@@ -25,10 +25,12 @@ class SearchAdapter(val context: Context, var list: List<ListData.Post>): Recycl
         val heart = itemView?.findViewById<ImageView>(R.id.heart)
 
         fun bind(listData: ListData.Post, context: Context){
+
+
             heartNum?.text = listData.likeCount.toString()
             title?.text = listData.title
-            grade?.text = listData.category.toString()
-            date?.text = listData.createdAt
+            grade?.text = listData.category.toString()+"학년"
+            date?.text = listData.createdAt.substring(0,10)
 
             heart.setOnClickListener {
                 heartNum?.text = (listData.likeCount + 1).toString()
