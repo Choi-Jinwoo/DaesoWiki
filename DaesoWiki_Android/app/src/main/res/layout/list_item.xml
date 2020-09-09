@@ -4,35 +4,40 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="60dp">
+    android:layout_height="80dp">
 
     <ImageView
         android:id="@+id/heart"
         android:layout_width="30dp"
         android:layout_height="30dp"
+        android:layout_marginStart="30dp"
         android:src="@drawable/icon"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.25" />
 
     <TextView
         android:id="@+id/heart_num_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
         android:text="안녕"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/heart"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/heart" />
+        app:layout_constraintTop_toBottomOf="@+id/heart"
+        app:layout_constraintVertical_bias="0.3" />
 
     <TextView
         android:id="@+id/title_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
         android:text="안녕1"
         app:layout_constraintBottom_toBottomOf="@+id/heart"
-        app:layout_constraintTop_toTopOf="@id/heart"
-        tools:layout_editor_absoluteX="46dp" />
+        app:layout_constraintStart_toEndOf="@+id/heart"
+        app:layout_constraintTop_toTopOf="@id/heart" />
 
     <TextView
         android:id="@+id/grade_tv"
@@ -47,10 +52,10 @@
         android:id="@+id/date_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
         android:text="안녕3"
         app:layout_constraintBottom_toBottomOf="@+id/grade_tv"
         app:layout_constraintStart_toEndOf="@id/grade_tv"
-        app:layout_constraintTop_toTopOf="@id/grade_tv"
-        tools:layout_editor_absoluteX="97dp" />
+        app:layout_constraintTop_toTopOf="@id/grade_tv" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

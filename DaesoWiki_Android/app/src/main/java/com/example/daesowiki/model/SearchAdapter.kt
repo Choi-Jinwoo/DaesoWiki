@@ -21,7 +21,7 @@ class SearchAdapter(val context: Context, var list: List<ListData.Post>): Recycl
             heartNum?.text = listData.idx.toString()
             title?.text = listData.title
             grade?.text = listData.category.toString()
-            date?.text = listData.createdAt.toString()
+            date?.text = listData.createdAt
         }
     }
 
