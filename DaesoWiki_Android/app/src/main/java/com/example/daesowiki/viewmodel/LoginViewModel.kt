@@ -13,7 +13,7 @@ import retrofit2.Retrofit
 
 class LoginViewModel : BaseViewModel()  {
 
-    val id = MutableLiveData<String>()
+    var id = MutableLiveData<String>()
     val pw = MutableLiveData<String>()
     var loginStatus = MutableLiveData<String>()
 

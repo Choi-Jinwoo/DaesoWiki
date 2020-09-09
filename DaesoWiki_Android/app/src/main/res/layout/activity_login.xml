@@ -31,8 +31,7 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/login_id_TIL"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="331dp"
+              android:layout_width="331dp"
             android:layout_height="70dp"
             android:layout_marginTop="50dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -53,7 +52,7 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/login_pw_TIL"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+
             android:layout_width="331dp"
             android:layout_height="70dp"
             android:layout_marginTop="50dp"
