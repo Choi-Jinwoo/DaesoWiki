@@ -83,6 +83,7 @@
         android:layout_marginTop="8dp"
         android:background="@drawable/edit_background4"
         android:text="내용용용용"
+        android:gravity="center_vertical"
         android:textColor="@color/colorBlack"
         app:layout_constraintEnd_toEndOf="@+id/textView5"
         app:layout_constraintHorizontal_bias="0.484"
