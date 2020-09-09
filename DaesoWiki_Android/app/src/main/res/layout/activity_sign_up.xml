@@ -25,6 +25,7 @@
             android:text="Hello!"
             android:textColor="#2026a2"
             android:textSize="36sp"
+            android:fontFamily="@font/spoqahansansregular"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -36,6 +37,7 @@
             android:text="아이디"
             android:textColor="#2026a2"
             android:textSize="16sp"
+            android:fontFamily="@font/spoqahansansregular"
             app:layout_constraintBottom_toTopOf="@+id/Sign_id_Et"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.131"
@@ -44,15 +46,14 @@
         <EditText
             android:id="@+id/Sign_id_Et"
             android:layout_width="331dp"
-            android:layout_height="60dp"
-            android:layout_marginTop="100dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="130dp"
             android:background="@drawable/edit_background"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.621"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
             android:text="@={viewModel.id}"
-            />
+            android:fontFamily="@font/spoqahansansregular"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/textView4"
@@ -61,6 +62,7 @@
             android:text="비밀번호"
             android:textColor="#2026a2"
             android:textSize="16sp"
+            android:fontFamily="@font/spoqahansansregular"
             app:layout_constraintBottom_toTopOf="@+id/sign_pw_Et"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.131"
@@ -69,16 +71,15 @@
         <EditText
             android:id="@+id/sign_pw_Et"
             android:layout_width="331dp"
-            android:layout_height="60dp"
-            android:layout_marginTop="250dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="50dp"
             android:background="@drawable/edit_background"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.621"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:text="@={viewModel.pw}"
             android:inputType="textPassword"
-            />
+            android:text="@={viewModel.pw}"
+            android:fontFamily="@font/spoqahansansregular"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Sign_id_Et" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -86,6 +87,7 @@
             android:text="비밀번호 확인"
             android:textColor="#2026a2"
             android:textSize="16sp"
+            android:fontFamily="@font/spoqahansansregular"
             app:layout_constraintBottom_toTopOf="@+id/sign_repw_Et"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.131"
@@ -98,6 +100,7 @@
             android:text=""
             android:textColor="#2026a2"
             android:textSize="16sp"
+            android:fontFamily="@font/spoqahansansregular"
             app:layout_constraintBottom_toTopOf="@+id/sign_repw_Et"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.853"
@@ -109,6 +112,7 @@
             android:text="학년"
             android:textColor="#2026a2"
             android:textSize="16sp"
+            android:fontFamily="@font/spoqahansansregular"
             app:layout_constraintBottom_toTopOf="@+id/Sign_student_Et"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.131"
@@ -117,30 +121,28 @@
         <EditText
             android:id="@+id/sign_repw_Et"
             android:layout_width="331dp"
-            android:layout_height="60dp"
-            android:layout_marginTop="400dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="50dp"
+            android:fontFamily="@font/spoqahansansregular"
             android:background="@drawable/edit_background"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.621"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:text="@={viewModel.repw}"
             android:inputType="textPassword"
-            />
+            android:text="@={viewModel.repw}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sign_pw_Et" />
 
         <EditText
             android:id="@+id/Sign_student_Et"
             android:layout_width="331dp"
-            android:layout_height="60dp"
-            android:layout_marginTop="550dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="50dp"
+            android:fontFamily="@font/spoqahansansregular"
             android:background="@drawable/edit_background"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.621"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:text="@={viewModel.grade}"
             android:inputType="number"
-            />
+            android:text="@={viewModel.grade}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sign_repw_Et" />
 
 
         <Button
@@ -148,15 +150,16 @@
             android:layout_width="331dp"
             android:layout_height="55dp"
             android:background="@drawable/main__btn"
+            android:onClick="@{()->viewModel.nextBtnClick()}"
             android:text="완료"
             android:textColor="#FFFFFF"
+            android:fontFamily="@font/spoqahansansregular"
             android:textSize="24dp"
-            android:onClick="@{()->viewModel.nextBtnClick()}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/Sign_student_Et"
-            app:layout_constraintVertical_bias="0.67" />
+            app:layout_constraintVertical_bias="0.6" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

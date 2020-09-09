@@ -44,6 +44,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="아이디"
+                android:fontFamily="@font/spoqahansansregular"
                 android:background="@drawable/edittext_background"
                 android:inputType="text"
                 android:text="@={viewModel.id}" />
@@ -66,6 +67,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="패스워드"
+                android:fontFamily="@font/spoqahansansregular"
                 android:background="@drawable/edittext_background"
                 android:inputType="textPassword"
                 android:text="@={viewModel.pw}" />
@@ -75,11 +77,12 @@
         <Button
             android:id="@+id/button"
             android:layout_width="351dp"
-            android:layout_height="51dp"
+            android:layout_height="50dp"
             android:background="@drawable/main__btn"
             android:onClick="@{()->viewModel.btnClick()}"
             android:text="로그인"
             android:textColor="#FFFFFF"
+            android:fontFamily="@font/spoqahansansbold"
             android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -93,6 +96,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
+            android:fontFamily="@font/spoqahansansregular"
             android:onClick="@{()->viewModel.noidClick()}"
             android:text="회원이 아니신가요?"
             android:textColor="#2026a2"
