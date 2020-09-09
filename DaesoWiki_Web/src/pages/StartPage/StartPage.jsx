@@ -15,19 +15,26 @@ const StartPage = ({ history }) => {
           </div>
           <div>
             <button className='start'>
-              <a href="/" style={{
+              <a href="/main" style={{
                 textDecoration: 'none',
                 color: '#ffffff'
               }}>
                 시작하기
               </a>
             </button>
-            <button>회원가입</button>
+            <button >
+              <a href="/main" style={{
+                textDecoration: 'none',
+                color: '#000000'
+              }}>
+                가입하기
+              </a>
+            </button>
           </div>
         </div>
       </div>
       <img src={start} alt="이미지 없는데" />
-    </div>
+    </div >
   )
 }
 

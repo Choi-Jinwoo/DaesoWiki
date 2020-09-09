@@ -8,8 +8,8 @@ import './common.scss';
 const App = () => (
   <BrowserRouter>
     <Switch>
-      <Route path="/start" component={StartPage} />
-      <Route path="/" component={MainPage} />
+      <Route path="/main" component={MainPage} />
+      <Route path="/" component={StartPage} />
       {/* <Redirect path="*" to="/" /> */}
     </Switch>
   </BrowserRouter>
