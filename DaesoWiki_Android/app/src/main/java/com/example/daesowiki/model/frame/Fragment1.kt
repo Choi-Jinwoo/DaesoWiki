@@ -17,6 +17,7 @@ import com.example.daesowiki.model.SearchAdapter
 import com.example.daesowiki.model.response.ListData
 import com.example.daesowiki.network.Dao
 import com.example.daesowiki.network.RetrofitClient
+import com.example.daesowiki.view.DetailActivity
 import com.example.daesowiki.view.HomeActivity
 import kotlinx.android.synthetic.main.activity_fragment1.*
 import retrofit2.Call
@@ -106,7 +107,9 @@ class Fragment1 : Fragment() {
         })
 
         searchAdapter?.onClickEvent?.observe(viewLifecycleOwner, Observer {
-            Log.d("dd", "dd")
+            val intent = Intent(this.context, DetailActivity::class.java)
+            intent.putExtra("post", it)
+            startActivity(intent)
         })
     }
 }

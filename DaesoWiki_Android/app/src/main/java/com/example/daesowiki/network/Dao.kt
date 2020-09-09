@@ -7,10 +7,7 @@ import com.example.daesowiki.model.request.SearchKeyword
 import com.example.daesowiki.model.response.ListData
 import com.example.daesowiki.model.response.SignUpData
 import retrofit2.Call
-import retrofit2.http.POST
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.Query
+import retrofit2.http.*
 
 interface Dao {
 
@@ -31,6 +28,4 @@ interface Dao {
 
     @GET("/api/post")
     fun list_get():Call<ListData>
-
-//    @GET("/static/")
 }

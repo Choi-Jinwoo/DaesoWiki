@@ -1,6 +1,6 @@
 package com.example.daesowiki.model.response
 
-import java.util.*
+import java.io.Serializable
 
 data class ListData (
     val message: String,
@@ -19,7 +19,7 @@ data class ListData (
         val category: Int,
         val createdAt: String,
         val likeCount: Int
-    )
+    ) : Serializable
 }
 
 
