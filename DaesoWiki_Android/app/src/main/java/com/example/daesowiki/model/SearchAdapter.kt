@@ -26,7 +26,6 @@ class SearchAdapter(val context: Context, var list: List<ListData.Post>): Recycl
 
         fun bind(listData: ListData.Post, context: Context){
 
-
             heartNum?.text = listData.likeCount.toString()
             title?.text = listData.title
             grade?.text = listData.category.toString()+"학년"
