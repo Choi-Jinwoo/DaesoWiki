@@ -21,10 +21,10 @@ exports.getPost = async (req, res) => {
         post.liked = false;
         if (req.user) {
             for (const pl of postLike) {
-                console.log(pl.userId);
-                pl.userId == req.user.id;
-                post.liked = true;
-                break;
+                if (pl.userId == req.user.id) {
+                    post.liked = true;
+                    break;
+                }
             }
         }
 
@@ -169,8 +169,9 @@ exports.like = async (req, res) => {
             where: {
                 userId: user.id,
                 postIdx,
-            }
-        })
+            },
+            raw: true,
+        });
 
         if (existLike) {
             return res.status(409).json({

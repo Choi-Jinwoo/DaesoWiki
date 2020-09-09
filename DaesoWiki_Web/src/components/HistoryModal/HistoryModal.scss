@@ -1,4 +1,4 @@
-.addPostModal-overlay{
+.historyModal-overlay{
   position: fixed;
   top: 0;
   left: 0;
@@ -8,9 +8,9 @@
   z-index: 100;
 }
 
-.addPostModal{
+.historyModal{
     position: fixed;
-    z-index: 101;
+    z-index: 102;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -25,21 +25,6 @@
       flex-direction: column;
       width: 250px;
 
-      .type {
-        button {
-          border: none;
-          width: 80px;
-          padding: 4px;
-          border-radius: 20px;
-          margin-right: 10px;
-          cursor: pointer;
-          margin-bottom: 20px;
-          &:focus {
-            outline: none;
-          }
-        }
-      }
-
       p {
         margin: 0;
         padding: 0;
@@ -52,7 +37,7 @@
           width: 250px;
           padding: 5px;
           border: none;
-          border-bottom: 1px solid #dbdbdb;
+          border-bottom: 1px solid #3D3D3D;
           &:focus {
             outline: none;
           }
@@ -65,8 +50,6 @@
           resize: none;
           width: 250px;
           height: 100px;
-          border: 1px solid #dbdbdb;
-          border-radius: 3px;
 
           &:focus {
             outline: none;

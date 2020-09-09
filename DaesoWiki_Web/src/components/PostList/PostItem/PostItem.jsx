@@ -14,25 +14,38 @@ import './PostItem.scss'
  */
 const PostItem = ({ post, setPostIdx }) => {
   return (
-    <div className='postItem' onClick={(e) => {
-      setPostIdx(post.idx);
-    }}>
-      <div className='heart'>
-        <FaHeart size='12px' color='#2026A2' />
-        {post.likeCount}
-      </div>
-      <div className='content'>
-        <h3>{post.title}</h3>
-        <div className='detail'>
-          <span>
-            {post.category}학년
+    post.thumbnail ?
+      <div className='postItem' onClick={(e) => {
+        setPostIdx(post.idx);
+      }}>
+        <div className='heart'>
+          <FaHeart size='12px' color='#2026A2' />
+          {post.likeCount}
+        </div>
+        <div className='content'>
+          <h3>{post.title}</h3>
+          <div className='detail'>
+            <span>
+              {post.category}학년
           </span>
-          <span>
-            {moment(post.createdAt).format('YYYY-MM-DD')}
-          </span>
+            <span>
+              {moment(post.createdAt).format('YYYY-MM-DD')}
+            </span>
+          </div>
         </div>
       </div>
-    </div>
+      :
+      <div className='slangItem'>
+        <span>단어</span>
+        <h3>
+          {post.title}
+        </h3>
+
+        <span>내용</span>
+        <p>
+          {post.content}
+        </p>
+      </div>
   )
 }
 

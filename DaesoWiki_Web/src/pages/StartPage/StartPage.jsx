@@ -3,7 +3,7 @@ import start from './start.png';
 
 import './StartPage.scss'
 
-const StartPage = () => {
+const StartPage = ({ history }) => {
   return (
     <div className='startPage'>
       <div className='wrapper'>
@@ -14,7 +14,14 @@ const StartPage = () => {
             <p>지금 만나보세요</p>
           </div>
           <div>
-            <button className='start'>시작하기</button>
+            <button className='start'>
+              <a href="/" style={{
+                textDecoration: 'none',
+                color: '#ffffff'
+              }}>
+                시작하기
+              </a>
+            </button>
             <button>회원가입</button>
           </div>
         </div>

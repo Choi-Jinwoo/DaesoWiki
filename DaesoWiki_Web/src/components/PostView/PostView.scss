@@ -1,13 +1,24 @@
 .postView {
   background-color: #ffffff;
   margin: 0 auto;
-  margin-top: 160px;
+  margin-top: 200px;
   width: 40%;
   border: 1px solid #C7C7C7;
 
+
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #C7C7C7;
+
+    .icon {
+      margin-top: 20px;
+      margin-right: 20px;
+      cursor: pointer;
+    }
+  }
   .title {
     padding: 20px;
-    border-bottom: 1px solid #C7C7C7;
 
     h1 {
       margin: 0;
