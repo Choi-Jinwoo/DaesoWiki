@@ -31,9 +31,8 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/login_id_TIL"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="331dp"
-            android:layout_height="55dp"
+              android:layout_width="331dp"
+            android:layout_height="70dp"
             android:layout_marginTop="50dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -45,6 +44,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="아이디"
+                android:background="@drawable/edittext_background"
                 android:inputType="text"
                 android:text="@={viewModel.id}" />
 
@@ -52,9 +52,9 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/login_pw_TIL"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+
             android:layout_width="331dp"
-            android:layout_height="55dp"
+            android:layout_height="70dp"
             android:layout_marginTop="50dp"
             app:boxStrokeColor="@color/colorBlue"
             app:layout_constraintEnd_toEndOf="parent"
@@ -66,6 +66,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="패스워드"
+                android:background="@drawable/edittext_background"
                 android:inputType="textPassword"
                 android:text="@={viewModel.pw}" />
 
