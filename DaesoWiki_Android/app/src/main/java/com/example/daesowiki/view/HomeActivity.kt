@@ -17,7 +17,8 @@ import kotlinx.android.synthetic.main.activity_profile.*
 
 class HomeActivity : AppCompatActivity() {
 
-    val searchClickEvent = SingleLiveEvent<Unit>()
+    val searchClickEvent = SingleLiveEvent<String>()
+    val categoryClickEvent = SingleLiveEvent<Int>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,52 +28,34 @@ class HomeActivity : AppCompatActivity() {
 
         val userId = intent.getStringExtra("Profile")
 
-
-
         name.setOnClickListener {
+            var intent = Intent(this@HomeActivity, ProfileActivity::class.java)
+            intent.putExtra("Profile2", userId)
+            startActivity(intent)
+        }
 
-        var intent = Intent(this@HomeActivity, ProfileActivity::class.java)
-        intent.putExtra("Profile2", userId)
-        startActivity(intent)
+        supportFragmentManager.beginTransaction().replace(R.id.main_frame, Fragment1()).commit()
 
-    }
-
-        setFrag(0)
+        categoryClickEvent.value = 0
 
         main_Btn.setOnClickListener{
-            setFrag(0)
+            categoryClickEvent.value = 0
+        }
+
+        first_Btn.setOnClickListener{
+            categoryClickEvent.value = 1
+        }
+
+        second_Btn.setOnClickListener{
+            categoryClickEvent.value = 2
+        }
+
+        third_Btn.setOnClickListener{
+            categoryClickEvent.value = 3
         }
 
         search_Btn.setOnClickListener {
-            searchClickEvent.call()
-        }
-
-//        first_Btn.setOnClickListener {
-//            setFrag(1)
-//        }
-//        second_Btn.setOnClickListener {
-//            setFrag(2)
-//        }
-//        third_Btn.setOnClickListener {
-//            setFrag(3)
-//        }
-    }
-    private fun setFrag(fragNum : Int) {
-        val ft = supportFragmentManager.beginTransaction() //화면 교체를 위한 트랜잭션
-        when(fragNum){
-            0 -> {
-                ft.replace(R.id.main_frame, Fragment1()).commit()
-            }
-//            1 ->{
-//                ft.replace(R.id.main_frame, Fragment2()).commit()
-//            }
-//            2->{
-//                ft.replace(R.id.main_frame, Fragment3()).commit()
-//            }
-//            3->{
-//                ft.replace(R.id.main_frame, Fragment4()).commit()
-//            }
+            searchClickEvent.value = search_et.text.toString()
         }
     }
-
 }
