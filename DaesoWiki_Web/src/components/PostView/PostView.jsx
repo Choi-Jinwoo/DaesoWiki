@@ -29,7 +29,7 @@ const PostView = observer(({ postIdx }) => {
         <span>{post.category}학년</span>
       </div>
       <div className='content'>
-        <img src={post.thumbnail} alt="" />
+        <img src={`${SERVER}/static/${post.thumbnail}`} alt="" />
         {post.content}
       </div>
       <div className='like'>

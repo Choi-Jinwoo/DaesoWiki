@@ -1,11 +1,13 @@
 import React, { useState, useRef } from 'react';
+import axios from 'axios';
+import SERVER from '../../stores/config';
 
 import './AddPostModal.scss';
 
 const AddPostModal = ({ isOpen, close }) => {
   const fileEl = useRef(null);
 
-  const [currentCategory, setCurrentCategory] = useState(1);
+  const [currentCategory, setCurrentCategory] = useState(null);
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
   const [file, setFile] = useState(null);
@@ -13,6 +15,40 @@ const AddPostModal = ({ isOpen, close }) => {
 
   const handleClick = (e) => {
     fileEl.current.click();
+  }
+
+  const submit = async (e) => {
+    const formData = new FormData();
+    let fileRes;
+
+    if (file) {
+      formData.append("file", file[0]);
+      try {
+        const res = await axios.post(`${SERVER}/api/upload`, formData, {
+          headers: {
+            'Content-Type': 'multipart/form-data',
+          }
+        });
+        fileRes = res.data.data.file;
+
+        await axios.post(`${SERVER}/api/post`, {
+          title,
+          content,
+          category: currentCategory,
+          thumbnail: fileRes,
+        })
+
+        alert('게시물 생성 성공');
+        close();
+
+      } catch (err) {
+        console.log(err);
+      }
+    } else {
+      alert('파일이 없어요')
+    }
+
+
   }
 
   return (
@@ -60,15 +96,19 @@ const AddPostModal = ({ isOpen, close }) => {
             <input type="file" className='fileInput' style={{
               display: 'none',
             }} ref={fileEl}
-              onChange={e => {
-
-              }}
+              onChange={e => setFile(e.target.files)}
             />
 
             <div className='submitForm'>
-              <button style={{
-                marginRight: '5px'
-              }}>작성</button>
+              <button
+                style={{
+                  marginRight: '5px'
+                }}
+                onClick={
+                  e => {
+                    submit();
+                  }
+                } >작성</button>
               <button onClick={e => { close() }} style={{
                 marginLeft: '5px'
               }}>취소</button>

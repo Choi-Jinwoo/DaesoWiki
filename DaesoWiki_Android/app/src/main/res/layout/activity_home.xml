@@ -23,7 +23,7 @@
         android:background="@drawable/edit_background2"
         android:ems="10"
         android:inputType="text"
-        android:text="검색"
+        android:hint="검색"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/back_textview"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
